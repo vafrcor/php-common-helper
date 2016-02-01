@@ -9,8 +9,15 @@ class Debug
         exit();
     }
 
-    public static function vDumpPreExit($expression=NULL,$attr=array())
+    public static function vDumpPreExit($expression=NULL, $attr=array())
 	{	
+        $attr_str='';
+        if(count($attr) > 0){
+            foreach($attr as $at_key => $at_val){
+                $attr_str.=' '.$at_key.'="'.$at_val.'"';
+            }
+        }
+
 		echo '<pre '.$attr_str.'>';
         var_dump($expression);
         echo '</pre>';
