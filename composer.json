@@ -1,0 +1,24 @@
+{
+    "name": "vafrcor/php-common-helper",
+    "description": "PHP Common Helper",
+    "type": "helper",
+    "keywords": ["helper", "common", "php"],
+    "homepage": "http://github.com/vafrcor/php-common-helper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vinsensius Angelo",
+            "email": "vafrcor2007@yahoo.co.id"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vafrcor\\PhpCommonHelper\\": "src/"
+        },
+        "files": ["src/functions.php"]
+    }
+}
