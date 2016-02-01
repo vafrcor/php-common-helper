@@ -68,4 +68,24 @@ class Input
         dvs($av_t,$av_ft,$fn,$ft,$fd,$opt); return $r;
     }
 
+    /**
+     * Get input from HTTP Request Body (JSON string only)
+     * 
+     */
+    public static function getJsonStreamData($container=''){
+        global $_GET, $_POST, $_PUT;
+        if(!isset($_PUT)){
+            $_PUT=array();
+        }
+        $stream= file_get_contents("php://input");
+
+        if($container=='_POST'){
+            $_POST= (!empty($stream))? json_decode($stream,true) : array();
+        }else if($container=='_GET'){
+            $_GET= (!empty($stream))? json_decode($stream,true) : array();
+        }else if($container=='_PUT'){
+            $_PUT= (!empty($stream))? json_decode($stream,true) : array();
+        }else{ }
+    }
+
 }
